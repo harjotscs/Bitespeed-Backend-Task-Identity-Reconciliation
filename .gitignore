@@ -1,0 +1,8 @@
+# Dependencies directory
+node_modules
+
+# Sensitive or environment-specific data
+.env
+
+#local IDE config 
+.vscode
