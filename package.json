@@ -8,8 +8,9 @@
     "create": "npx sequelize-cli db:create",
     "migrate": "npx sequelize-cli db:migrate",
     "start": "node src/index.js",
+    "start:seed": "node src/seeds",
     "dev": "env-cmd nodemon src/index.js",
-    "seed": "env-cmd nodemon src/seeds"
+    "dev:seed": "env-cmd nodemon src/seeds"
   },
   "keywords": [],
   "author": "Harjot Singh",
