@@ -5,14 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "create": "npx sequelize-cli db:create",
+    "migrate": "npx sequelize-cli db:migrate",
     "start": "node src/index.js",
-    "dev": "env-cmd nodemon src/index.js"
+    "dev": "env-cmd nodemon src/index.js",
+    "seed": "env-cmd nodemon src/seeds"
   },
   "keywords": [],
   "author": "Harjot Singh",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
+    "joi": "^17.9.2",
     "pg": "^8.11.0",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.32.0"

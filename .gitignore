@@ -3,6 +3,9 @@ node_modules
 
 # Sensitive or environment-specific data
 .env
+config
+migrations
+seeders
 
 #local IDE config 
 .vscode

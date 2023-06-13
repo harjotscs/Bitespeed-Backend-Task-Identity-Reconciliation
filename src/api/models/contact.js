@@ -1,5 +1,9 @@
 const { DataTypes, Model } = require("sequelize");
-const db = require("../config/db");
+const db = require("../../config/db");
+const {
+  LINK_PRECEDENCE_SECONDARY,
+  LINK_PRECEDENCE_PRIMARY,
+} = require("../utils/types/contact.types");
 
 class Contact extends Model {}
 
@@ -24,16 +28,16 @@ Contact.init(
     },
     linkPrecedence: {
       type: DataTypes.ENUM,
-      values: ["primary", "secondary"],
-      defaultValue: "primary",
+      values: [LINK_PRECEDENCE_PRIMARY, LINK_PRECEDENCE_SECONDARY],
+      defaultValue: LINK_PRECEDENCE_PRIMARY,
     },
     createdAt: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
+      defaultValue: new Date().toISOString(),
     },
     updatedAt: {
       type: DataTypes.DATE,
-      defaultValue: DataTypes.NOW,
+      defaultValue: new Date().toISOString(),
     },
     deletedAt: {
       type: DataTypes.DATE,
@@ -48,3 +52,5 @@ Contact.init(
     paranoid: true, // Adds deletedAt for each deleted entry, thus acts as a soft delete
   }
 );
+
+module.exports = Contact;
