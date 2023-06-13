@@ -36,17 +36,23 @@ exports.identifyContact = async (req, res) => {
 
     // If no existing contact, create a new one and return
     if (!existingContact) {
+      const emails = [],
+        phoneNumbers = [];
       const newContact = await createNewContact(
         email,
         phoneNumber,
         null,
         LINK_PRECEDENCE_PRIMARY
       );
+
+      if (newContact.email) emails.push(newContact.email);
+      if (newContact.phoneNumber) phoneNumbers.push(newContact.phoneNumber);
+
       return res.status(200).json({
         contact: {
           primaryContactId: newContact.id,
-          emails: [newContact.email],
-          phoneNumbers: [newContact.phoneNumber],
+          emails,
+          phoneNumbers,
           secondaryContactIds: [],
         },
       });
