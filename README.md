@@ -24,7 +24,7 @@ curl --location --request POST 'localhost:3000/identify' \
 ## Sample Curl Request for deployed version
 
 ```
-curl --location --request POST '<pending>/identify' \
+curl --location --request POST 'https://contact-identifier.onrender.com/identify' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "phoneNumber":"+1234567890",
