@@ -1,4 +1,4 @@
-# Bitespeed Backend Task: Identity Reconciliation
+# contacts-reconcilation
 
 The project is an Express.js-based API application for managing contacts. It provides various functionalities for creating, updating, and retrieving contact information. The API supports operations such as identifying contacts, transitioning contact precedence, and creating new contacts.
 
